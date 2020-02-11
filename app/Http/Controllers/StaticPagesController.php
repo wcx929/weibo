@@ -13,6 +13,7 @@ class StaticPagesController extends Controller
 
     public function help()
     {
+    	echo 123;
         return view('static_pages/help');
     }
 
