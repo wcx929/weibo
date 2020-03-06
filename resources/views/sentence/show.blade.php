@@ -4,11 +4,10 @@
     
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
+    <meta name="_token" content="{{ csrf_token() }}"/>
     <meta name="author" content="wanfeng">
     <title>嘴甜生成器</title>
-    <!-- Bootstrap core CSS -->
     <link href="/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <!-- Custom styles for this template -->
     <link href="/css/album.css" rel="stylesheet">
   </head>
   <body>
@@ -22,19 +21,15 @@
     </div>
   </div>
 </header>
-
 <main role="main">
-
   <section class="jumbotron text-center">
     <div class="container" style="height:300px;">
       <!-- <h1>Album example</h1> -->
-      <p class="lead text-muted border-bottom pb-5 pt-4" style="font-size:1.1rem;" >{{$lovewords->content}}</p>
-      
+      <p id="words" class="lead text-muted border-bottom pb-5 pt-4" style="font-size:1.1rem;" >{{$lovewords->content}}</p>    
     </div>
     <p>
-        <button type="button" id="copy" class="btn btn-success">复制</button>
-        <button type="button" class="btn btn-info">换一句</button>
-        
+        <button type="button" id="copy" data-clipboard-text="{{$lovewords->content}}" data-clipboard-target="#words" class="btn btn-success">复制</button>
+        <button type="button" class="btn btn-info">换一句</button>    
       </p>
   </section>
 </main>
@@ -48,9 +43,39 @@
     </ul>
 </footer>
  <script src="{{ mix('js/app.js') }}"></script>
+ <script src="/js/clipboard.min.js"></script>
  <script>
-  $('.btn-success').click(function () {
-    alert(123)
+ $(function(){
+  //new ClipboardJS('.btn');
+  var clipboard = new ClipboardJS('.btn');
+  clipboard.on('success', function(e) {
+    $("#copy").text('已复制');
+    setTimeout(function (){$("#copy").text('复制');},500);
   });
+  clipboard.on('error', function(e) {
+    $("#copy").text('复制失败');
+  });
+  $('.btn-info').click(function () {
+    $('.btn-info').prop('disabled', true);
+    $.ajax({
+      type: 'POST',
+      url: '/getloveword',
+      data: { date : '2015-03-12'},
+      dataType: 'json',
+      headers: {
+      'X-CSRF-TOKEN': $('meta[name="_token"]').attr('content')
+      },
+      success: function(data){
+        $("#words").text(data.content);
+        $("#copy").attr("data-clipboard-text",data.content);
+        $('.btn-info').prop('disabled', false);
+      },
+      error: function(xhr, type){
+      alert('Ajax error!')
+      }
+
+      });
+  });
+})
  </script>
 </body>

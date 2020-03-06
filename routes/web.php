@@ -52,4 +52,6 @@ Route::post('/users/followers/{user}', 'FollowersController@store')->name('follo
 Route::delete('/users/followers/{user}', 'FollowersController@destroy')->name('followers.destroy');
 
 //
-Route::resource('loveword', 'SentenceController');
+Route::get('loveword', 'SentenceController@show');
+Route::get('pic', 'SentenceController@pic');
+Route::post('getloveword', 'SentenceController@words');
