@@ -52,6 +52,8 @@ Route::post('/users/followers/{user}', 'FollowersController@store')->name('follo
 Route::delete('/users/followers/{user}', 'FollowersController@destroy')->name('followers.destroy');
 
 //
-Route::get('loveword', 'SentenceController@show');
-Route::get('pic', 'SentenceController@pic');
+Route::get('loveword', 'SentenceController@show')->name('loveword');
 Route::post('getloveword', 'SentenceController@words');
+Route::get('pic', 'PicController@show')->name('pic');
+
+Route::get('excel/export','ExcelController@export');

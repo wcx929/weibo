@@ -1,10 +1,8 @@
-<footer class="footer">
-  <img class="brand-icon" src="https://cdn.learnku.com/uploads/sites/KDiyAbV0hj1ytHpRTOlVpucbLebonxeX.png">
-  <a href="https://learnku.com/laravel/courses" target=_blank>
-    刻意练习，每日精进
-  </a>
-
-  <div class="float-right">
-    <a href="{{route('about')}}" >关于</a>
-  </div>
+<footer class="my-5 pt-5 text-muted text-center text-small">
+    <p class="mb-1">© 2017-2020 nmsl8.club</p>
+    <ul class="list-inline">
+      <li class="list-inline-item"><a href="#">首页</a></li>
+      <li class="list-inline-item"><a href="#">字词我们</a></li>
+      <li class="list-inline-item"><a href="#">QQ群</a></li>
+    </ul>
 </footer>

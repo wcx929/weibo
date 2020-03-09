@@ -11,5 +11,10 @@ Route::group([
 ], function (Router $router) {
 
     $router->get('/', 'HomeController@index')->name('admin.home');
-
+    $router->get('sentence', 'SentenceController@index');
+    $router->get('sentence/create', 'SentenceController@create');
+    $router->post('sentence', 'SentenceController@store');
+    $router->get('sentence/{id}/edit', 'SentenceController@edit');
+	$router->put('sentence/{id}', 'SentenceController@update');
+	$router->get('pic', 'PicController@index');
 });
