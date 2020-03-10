@@ -2,20 +2,20 @@
 
 namespace App\Admin\Controllers;
 
-use App\Models\Facepic;
+use App\Models\Fsj;
 use Encore\Admin\Controllers\AdminController;
 use Encore\Admin\Form;
 use Encore\Admin\Grid;
 use Encore\Admin\Show;
 
-class PicController extends AdminController
+class FsjController extends AdminController
 {
     /**
      * Title for current resource.
      *
      * @var string
      */
-    protected $title = '表情包';
+    protected $title = 'App\Models\Fsj';
 
     /**
      * Make a grid builder.
@@ -24,14 +24,13 @@ class PicController extends AdminController
      */
     protected function grid()
     {
-        $grid = new Grid(new Facepic);
-
-        $grid->column('id', __('Id'));
-        $grid->column('type_name', __('Type name'));
-        $grid->column('pic_url', __('Pic url'))->image();
+        $grid = new Grid(new Fsj);
+        $grid->id('ID');
+        $grid->content('内容');
+        $grid->copy_num('复制次数');
         $grid->column('online', __('Online'));
-        $grid->column('created_at', __('Created at'));
-        $grid->column('updated_at', __('Updated at'));
+        /*$grid->column('created_at', __('Created at'));*/
+        $grid->updated_at('创建时间');
 
         return $grid;
     }
@@ -44,11 +43,11 @@ class PicController extends AdminController
      */
     protected function detail($id)
     {
-        $show = new Show(Facepic::findOrFail($id));
+        $show = new Show(Fsj::findOrFail($id));
 
         $show->field('id', __('Id'));
-        $show->field('type_name', __('Type name'));
-        $show->field('pic_url', __('Pic url'));
+        $show->field('content', __('Content'));
+        $show->field('copy_num', __('Copy num'));
         $show->field('online', __('Online'));
         $show->field('created_at', __('Created at'));
         $show->field('updated_at', __('Updated at'));
@@ -63,10 +62,10 @@ class PicController extends AdminController
      */
     protected function form()
     {
-        $form = new Form(new Facepic);
+        $form = new Form(new Fsj);
 
-        $form->text('type_name', __('Type name'));
-        $form->text('pic_url', __('Pic url'));
+        $form->quill('content', '内容')->rules('required');
+        $form->number('copy_num', __('Copy num'));
         $form->number('online', __('Online'));
 
         return $form;

@@ -2,8 +2,8 @@
 
 namespace App\Imports;
 
-use App\Models\loveword;
-use App\Models\loveword as lovewordModel;
+use App\Models\Sentence;
+use App\Models\Sentence as sentenceModel;
 use Illuminate\Support\Collection;
 use Illuminate\Database\Eloquent\Model;
 use Maatwebsite\Excel\Concerns\ToModel;
@@ -33,13 +33,13 @@ class FirstSheetImport implements ToCollection, WithBatchInserts, WithChunkReadi
     public function model(array $row)
     {
         // 断数据是否
-        $user = loveword::where('content', '=', $row['句子'])->first();
+        $user = Sentence::where('content', '=', $row['句子'])->first();
         if ($user) {
             // 存在返回 null
             return null;
         }
         // 数据库对应的字段
-        return new loveword([
+        return new sentence([
             'content' => $row['句子'],
             'type' => $row['分类'],
         ]);

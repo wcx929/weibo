@@ -2,7 +2,7 @@
 
 namespace App\Admin\Controllers;
 
-use App\Models\Loveword;
+use App\Models\Sentence;
 use App\Models\SentenceType;
 use Encore\Admin\Controllers\AdminController;
 use Encore\Admin\Form;
@@ -27,7 +27,7 @@ class SentenceController extends AdminController
      */
     protected function grid()
     {
-        $grid = new Grid(new Loveword);
+        $grid = new Grid(new Sentence);
         $grid->exporter(new PostsExporter());
         // 创建一个列名为 ID 的列，内容是用户的 id 字段
         $grid->id('ID');
@@ -76,7 +76,7 @@ class SentenceController extends AdminController
      */
     protected function detail($id)
     {
-        $show = new Show(Loveword::findOrFail($id));
+        $show = new Show(Sentence::findOrFail($id));
 
         $show->field('id', __('Id'));
         $show->field('content', __('Content'));
@@ -97,7 +97,7 @@ class SentenceController extends AdminController
      */
     protected function form()
     {
-        $form = new Form(new Loveword);
+        $form = new Form(new Sentence);
 
         $form->textarea('content', '内容')->rules('required');
         /*$form->number('copy_num', __('Copy num'));*/

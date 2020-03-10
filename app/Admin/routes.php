@@ -17,4 +17,10 @@ Route::group([
     $router->get('sentence/{id}/edit', 'SentenceController@edit');
 	$router->put('sentence/{id}', 'SentenceController@update');
 	$router->get('pic', 'PicController@index');
+
+    $router->get('fsj', 'FsjController@index');
+    $router->get('fsj/{id}/edit', 'FsjController@edit');
+    $router->get('fsj/create', 'FsjController@create');
+    $router->post('fsj', 'FsjController@store');
+    $router->put('fsj/{id}', 'FsjController@update');
 });
