@@ -28,6 +28,7 @@
       <p id="words" class="lead text-muted border-bottom pb-5 pt-4" style="font-size:1.1rem;" >{{$lovewords->content}}</p>    
     </div>
     <p>
+    	<a href="{{route('senlist')}}" class="btn btn-info" role="button">列表查看</a> 
         <button type="button" id="copy" data-clipboard-text="{{$lovewords->content}}" data-clipboard-target="#words" class="btn btn-success">复制</button>
         <button type="button" class="btn btn-info">换一句</button>    
       </p>

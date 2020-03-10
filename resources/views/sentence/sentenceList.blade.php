@@ -24,6 +24,7 @@
 	<link rel="stylesheet" href="/css/picss/salvattore.css">
 	<!-- Theme Style -->
 	<link rel="stylesheet" href="/css/picss/style.css">
+	<link rel="stylesheet" href="/css/layer.css">
 	<!-- Modernizr JS -->
 	<script src="/js/picjs/modernizr-2.6.2.min.js"></script>
 	<!-- FOR IE9 below -->
@@ -38,9 +39,9 @@
 		<a href="#" class="fh5co-offcanvass-close js-fh5co-offcanvass-close">菜单 <img src="/img/home_logo/cd.png" alt=""> </a>
 		<h1 class="fh5co-logo"><a class="navbar-brand" href="index.html">选一张喜欢的吧</a></h1>
 		<ul>
-			@if ($face_type->count() > 0)
-			@foreach ($face_type as $vo)
-			<li @if($type_id==$vo->id) class="active" @endif><a href="{{ route('pic', array('type'=>$vo->id))}}">{{$vo->type_name}}</a></li>
+			@if ($sentence_type->count() > 0)
+			@foreach ($sentence_type as $vo)
+			<li><a href="{{ route('pic', array('type'=>$vo->id))}}">{{$vo->type_name}}</a></li>
 			@endforeach
         	@else
 			  <li><a href="#">暂时还没有分类</a></li>
@@ -72,9 +73,10 @@
 			@if ($info->count() > 0)
 			@foreach ($info as $status)
         	<div class="item">
-        		<div class="animate-box">
-        			<!-- <p>{{$status->pic_url}}</p> -->
-	        		<a href="{{$status->pic_url}}" class="image-popup fh5co-board-img"><img src="{{$status->pic_url}}" alt="Free HTML5 Bootstrap template"></a>
+        		<div class="animate-box" style="margin:1.5rem 0.8rem 1.5rem 1rem;">
+        			<p>{{$status->content}}</p>
+        			<span class="copys" data-clipboard-text="{{$status->content}}" style="float:right"><svg t="1583825846147" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="4830" width="16" height="16"><path d="M852.683175 1022.699683V852.195556h170.179047V0.812698H171.479365v170.179048H1.137778v851.545397h851.545397v0.16254zM228.205714 57.701587h737.930159v737.930159h-113.452698V171.154286H228.205714V57.701587zM57.864127 227.880635h737.930159v737.930159h-737.930159v-737.930159z" fill="#707070" p-id="4831"></path><path d="M661.048889 433.005714H206.262857c-15.44127 0-28.119365-12.678095-28.119365-28.119365s12.678095-28.119365 28.119365-28.119365h454.786032c15.44127 0 28.119365 12.515556 28.119365 28.119365-0.16254 15.60381-12.840635 28.119365-28.119365 28.119365z m0 181.231746H206.262857c-15.44127 0-28.119365-12.515556-28.119365-28.119365 0-15.44127 12.678095-28.119365 28.119365-28.119365h454.786032c15.44127 0 28.119365 12.515556 28.119365 28.119365-0.16254 15.27873-12.840635 28.119365-28.119365 28.119365z m0 180.906667H206.262857c-15.44127 0-28.119365-12.515556-28.119365-28.119365 0-15.44127 12.678095-28.119365 28.119365-28.119365h454.786032c15.44127 0 28.119365 12.515556 28.119365 28.119365-0.16254 15.44127-12.840635 28.119365-28.119365 28.119365z" fill="#707070" p-id="4832"></path></svg></span>
+	        		<!--<a href="{{$status->pic_url}}" class="image-popup fh5co-board-img"><img src="{{$status->pic_url}}" alt="Free HTML5 Bootstrap template"></a>-->
         		</div>
         	</div>
         	@endforeach
@@ -124,9 +126,26 @@
 	<script src="/js/picjs/salvattore.min.js"></script>
 	<!-- Main JS -->
 	<script src="/js/picjs/main.js"></script>
-
-	
-
-	
+	<script src="/js/clipboard.min.js"></script>
+	<script src="/js/layer.js"></script>
+	<script>
+		 $(function(){
+		 	var clipboard = new ClipboardJS('.copys');
+			clipboard.on('success', function(e) {
+				layer.open({
+				    content: '复制成功'
+				    ,skin: 'msg'
+				    ,time: 1 //2秒后自动关闭
+				  });
+			});
+			clipboard.on('error', function(e) {
+				layer.open({
+				    content: '复制失败'
+				    ,skin: 'msg'
+				    ,time: 1 //2秒后自动关闭
+				  });
+			});
+		 })
+	</script>
 	</body>
 </html>

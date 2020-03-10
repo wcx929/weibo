@@ -32,24 +32,30 @@
   </div>
 
   <div class="my-3 p-3 bg-white rounded shadow-sm">
+  	
     <h6 class="border-bottom border-gray pb-2 mb-0">抽象表情包</h6>
+    
     <div class="media text-muted pt-3" >
       <img src="/img/home_logo/bqb.png" alt="">
-      <a href="{{ route('pic') }}">
+      
       <p class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
+      	<a href="{{ route('pic') }}">
         <strong class="d-block text-primary">抽象表情包</strong>
         🏄‍人用的表情包
+        </a>
       </p>
-      </a>
+      
     </div>
     <div class="media text-muted pt-3">
       <img src="/img/home_logo/nmsl.png" alt="">
-      <a href="{{ route('loveword') }}">
+      
       <p class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
+      	<a href="{{ route('loveword') }}">
         <strong class="d-block text-primary">嘴臭生成器</strong>
         最简单的嘴臭，最极致的享受
+        </a>
       </p>
-      </a>
+      
     </div>
     <div class="media text-muted pt-3">
       <img src="/img/home_logo/zt.png" alt="">
