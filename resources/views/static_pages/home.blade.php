@@ -37,8 +37,8 @@
       
       <p class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
       	<a href="{{ route('pic') }}">
-        <strong class="d-block text-primary">抽象表情包</strong>
-        <span style="color:#6c757d">🏄‍人用的表情包</span>
+          <strong class="d-block text-primary">抽象表情包</strong>
+          <span style="color:#6c757d">🏄‍人用的表情包</span>
         </a>
       </p>
       
@@ -47,9 +47,9 @@
       <img src="/img/home_logo/nmsl.png" alt="">
       
       <p class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
-      	<a href="{{ route('loveword') }}">
-        <strong class="d-block text-primary">嘴臭生成器</strong>
-        <span style="color:#6c757d">最简单的嘴臭，最极致的享受</span>
+      	<a href="{{ route('loveword', array('type'=>2))}}">
+          <strong class="d-block text-primary">嘴臭生成器</strong>
+          <span style="color:#6c757d">最简单的嘴臭，最极致的享受</span>
         </a>
       </p>
       
@@ -57,22 +57,28 @@
     <div class="media text-muted pt-3">
       <img src="/img/home_logo/zt.png" alt="">
       <p class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
-        <strong class="d-block text-primary">嘴甜生成器</strong>
-        <span style="color:#6c757d">谁不想要甜甜的恋爱💑</span>
+        <a href="{{ route('loveword', array('type'=>1))}}">
+          <strong class="d-block text-primary">嘴甜生成器</strong>
+          <span style="color:#6c757d">谁不想要甜甜的恋爱💑</span>
+        </a>
       </p>
     </div>
     <div class="media text-muted pt-3">
       <img src="/img/home_logo/pyq.png" alt="">
       <p class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
-        <strong class="d-block text-primary">朋友圈文案生成器</strong>
-        <span style="color:#6c757d">不知道发什么？来选一条吧</span>
+        <a href="{{ route('loveword', array('type'=>3))}}">
+          <strong class="d-block text-primary">朋友圈文案生成器</strong>
+          <span style="color:#6c757d">不知道发什么？来选一条吧</span>
+        </a>
       </p>
     </div>
     <div class="media text-muted pt-3">
       <img src="/img/home_logo/jt.png" alt="">
       <p class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
-        <strong class="d-block text-primary">毒鸡汤生成器</strong>
-        <span style="color:#6c757d">‘有时候你不逼自己一把，你都不知道什么叫绝望’</span>
+        <a href="{{ route('loveword', array('type'=>4))}}">
+          <strong class="d-block text-primary">毒鸡汤生成器</strong>
+          <span style="color:#6c757d">‘有时候你不逼自己一把，你都不知道什么叫绝望’</span>
+        </a>
       </p>
     </div>
     <div class="media text-muted pt-3">
@@ -80,8 +86,8 @@
       
       <p class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
       	<a href="{{ route('fsj') }}">
-        <strong class="d-block text-primary">浮生记</strong>
-        <span style="color:#6c757d">你在山上，看着我死.</span>
+          <strong class="d-block text-primary">浮生记</strong>
+          <span style="color:#6c757d">你在山上，看着我死.</span>
         </a>
       </p>
       

@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Exceptions\InvalidRequestException;
 use Illuminate\Http\Request;
 use App\Models\Sentence;
 use App\Models\SentenceType;
@@ -13,12 +13,36 @@ class SentenceController extends Controller
         return view('users.create');
     }
 
-    public function show()
+    public function show(Request $request)
     {
-    	$total = Sentence::count() - 1;
-		$skip = mt_rand(0, $total);
-		$sentence = Sentence::select('content', 'base_content')->skip($skip)->take(1)->first();
-    	//print_r($item);die;
+        if ($type = $request->input('type', '')) {
+            $map['type'] = $type;
+        }else{
+            $map['type'] = 0;
+        }
+		$sentence = Sentence::select('sentence.content', 'sentence.base_content','sentence.type','sentence_types.type_name','sentence_types.logo')->join('sentence_types', 'sentence.type', '=', 'sentence_types.id')->where($map)->inRandomOrder()->first();
+        switch ($type) {
+            case '1':
+                $sentence['bg']='bg-zt';
+                break;
+            case '2':
+                $sentence['bg']='bg-zc';
+                break;
+            case '3':
+                $sentence['bg']='bg-pyq';
+                break;
+            case '4':
+                $sentence['bg']='bg-djt';
+                break;
+            
+            default:
+                $sentence['bg']='bg-info';
+                break;
+        }
+        if(empty($sentence)){
+             throw new InvalidRequestException("出错了");
+        }
+    	//var_dump($sentence);die;
         return view('sentence.show', compact('sentence'));
     }
 
@@ -28,12 +52,18 @@ class SentenceController extends Controller
     }
 
     //接口随机返回一条数据
-    public function words()
+    public function words(Request $request)
     {
-    	$total = Sentence::count() - 1;
-		$skip = mt_rand(0, $total);
-		$Sentences = Sentence::select('content', 'base_content')->skip($skip)->take(1)->first();
-        return response()->json($Sentences);
+    	if ($type = $request->input('type', '')) {
+            $map['type'] = $type;
+        }else{
+            $map['type'] = 0;
+        }
+        $sentence = Sentence::select('content', 'base_content','type')->where($map)->inRandomOrder()->first();
+        if(empty($sentence)){
+             throw new InvalidRequestException("出错了");
+        }
+        return response()->json($sentence);
     }
 
     public function getSentence()
