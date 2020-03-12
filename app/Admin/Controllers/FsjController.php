@@ -26,7 +26,9 @@ class FsjController extends AdminController
     {
         $grid = new Grid(new Fsj);
         $grid->id('ID');
-        $grid->content('内容');
+        $grid->content('内容')->display(function ($value) {
+            return strip_tags($value);
+        });
         $grid->copy_num('复制次数');
         $grid->column('online', __('Online'));
         /*$grid->column('created_at', __('Created at'));*/

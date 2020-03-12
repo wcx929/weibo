@@ -14,6 +14,7 @@ Route::get('/', 'StaticPagesController@home')->name('home');
 Route::get('/home', 'StaticPagesController@home')->name('home');
 Route::get('/help', 'StaticPagesController@help')->name('help');
 Route::get('/about', 'StaticPagesController@about')->name('about');
+Route::get('support', 'StaticPagesController@support')->name('support');
 
 Route::get('signup', 'UsersController@create')->name('signup');
 
@@ -57,6 +58,7 @@ Route::post('getloveword', 'SentenceController@words');
 Route::get('pic', 'PicController@show')->name('pic');
 Route::get('senlist', 'SentenceController@sentenceList')->name('senlist');
 //浮生记列表
-Route::get('fsj', 'FsjController@show')->name('fjs');
+Route::get('fsj', 'FsjController@show')->name('fsj');
+
 
 Route::get('excel/export','ExcelController@export');

@@ -29,4 +29,9 @@ class StaticPagesController extends Controller
     {
         return view('static_pages/about');
     }
+    
+    public function support()
+    {
+        return view('static_pages/support');
+    }
 }

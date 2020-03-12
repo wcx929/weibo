@@ -31,7 +31,11 @@
 	<!--[if lt IE 9]>
 	<script src="js/respond.min.js"></script>
 	<![endif]-->
-
+	<style>
+		.fh5co-social-icons a{
+			color:grey;
+		}
+	</style>
 	</head>
 	<body>
 		
@@ -95,21 +99,19 @@
 <svg t="1583819717863" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2263" width="32" height="32"><path d="M494.23872 296.03328l-409.6 409.59488a17.0496 17.0496 0 0 0 0 24.13568 17.0496 17.0496 0 0 0 24.13056 0l397.53728-397.53728 397.55264 397.54752a17.03936 17.03936 0 0 0 24.13056 0c3.328-3.328 5.00224-7.69536 5.00224-12.06272s-1.66912-8.73984-5.00224-12.06272l-409.6-409.6a17.05984 17.05984 0 0 0-24.15104-0.01536z" p-id="2264"></path></svg>
 </a>
     <div class="container col-md-12 text-center">
-        {{ $info->appends($filters)->render() }}
+        {{ $info->appends($filters)->onEachSide(1)->render() }}
         </div>
 	<footer id="fh5co-footer">
 		
 		<div class="container">
 			<div class="row row-padded">
 				<div class="col-md-12 text-center">
-					<!-- <p class="fh5co-social-icons">
-						<a href="#"><i class="icon-twitter"></i></a>
-						<a href="#"><i class="icon-facebook"></i></a>
-						<a href="#"><i class="icon-instagram"></i></a>
-						<a href="#"><i class="icon-dribbble"></i></a>
-						<a href="#"><i class="icon-youtube"></i></a>
-					</p> -->
-					<p><small>&copy; <a style="color:#818892" href='{{ route('home') }}'>首页</a>  | <a style="color:#818892" href='{{ route('home') }}'>字词我们</a> | QQ群</small></p>
+					<p class="fh5co-social-icons" style="color:#818892">
+						&copy;  2017-2020 nmsl8.club | 浙ICP备19003075号-1
+						<!--<a href="#"><i class="icon-dribbble"></i></a>
+						<a href="#"><i class="icon-youtube"></i></a>-->
+					</p>
+					<p><small><a style="color:#818892" href='{{ route('home') }}'>首页</a>  | <a style="color:#818892" href='{{ route('support') }}'>字词我们</a> | <span id='qun'>QQ群</span></small></p>
 				</div>
 			</div>
 		</div>
@@ -149,6 +151,16 @@
 				    ,time: 1 //2秒后自动关闭
 				  });
 			});
+			$("#qun").click(function () {
+				//自定义标题风格
+			  layer.open({
+			    title: [
+			      '打开QQ扫一扫加群',
+			      'background-color: #8B8B7A; color:#fff;'
+			    ]
+			    ,content: "<img src='/img/home_logo/qun.png' >"
+			  });
+			})
 		 })
 	</script>
 	</body>

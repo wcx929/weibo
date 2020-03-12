@@ -40,7 +40,7 @@
 				<div class="col-md-12">
 					<a href="#" class="fh5co-menu-btn js-fh5co-menu-btn">菜单 <img src="/img/home_logo/cd.png" alt=""></a>
 					@empty($type)
-					<a class="navbar-brand" href="index.html"> u r b b r   g r o yo gai</a>	
+					<a class="navbar-brand" href="index.html"> 浮生若梦</a>	
 					@else
 					<a class="navbar-brand" href="index.html"> {{$type->type_name}}</a>	
 					@endempty	
