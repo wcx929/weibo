@@ -13,13 +13,13 @@ class PicController extends Controller
     	
     	// 创建一个查询构造器
         $builder = Facepic::query()->where('online', true);
-        // 是否有提交 order 参数，如果有就赋值给 $order 变量
-        // order 参数用来控制商品的排序规则
+        $type_arr=[];
         if ($type = $request->input('type', '')) {
             $builder->where('type_name',$type);
+            $type_arr = Pictype::find($type);
         }
         
-        $info = $builder->paginate(30);
+        $info = $builder->paginate(60);
     	
     	//$info = DB::table('facepics')->paginate(15);
     	$face_type = Pictype::all();
@@ -27,6 +27,7 @@ class PicController extends Controller
     	$info = $builder->limit(2);*/
     	return view('pic.pic',  [
             'info' => $info,
+            'type'=>$type_arr,
             'face_type' => $face_type,
             'type_id'=>$type,
             'filters'  => [

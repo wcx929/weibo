@@ -81,7 +81,7 @@
 					$(this.element).addClass('bounceIn animated');
 				}
 
-			} , { offset: '75%' } );
+			} , { offset: '100%' } );
 		}
 
 	};

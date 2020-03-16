@@ -1,15 +1,11 @@
-
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<html class="no-js">
 	<head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>抽象表情包</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="Free HTML5 Template by FREEHTML5.CO" />
+	<meta name="description" content="抽象表情包抽象TV抽象句子，派大星，药水哥，喜羊羊，干物妹小埋等等各种表情包免费无水印" />
 	<meta name="keywords" content="抽象表情包,nmsl表情包,nmsl8.club,嘴臭生成器" />
 	<link rel="icon" href="/img/cx.ico">
 	<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
@@ -33,7 +29,6 @@
 
 	</head>
 	<body>
-		
 	<div id="fh5co-offcanvass">
 		<a href="#" class="fh5co-offcanvass-close js-fh5co-offcanvass-close">菜单 <img src="/img/home_logo/cd.png" alt=""> </a>
 		<h1 class="fh5co-logo"><a class="navbar-brand" href="index.html">选一张喜欢的吧</a></h1>
@@ -56,7 +51,11 @@
 			<div class="row">
 				<div class="col-md-12">
 					<a href="#" class="fh5co-menu-btn js-fh5co-menu-btn">菜单 <img src="/img/home_logo/cd.png" alt=""></a>
-					<a class="navbar-brand" href="index.html"> u r b b r   g r o yo gai</a>		
+					@empty($type)
+					<a class="navbar-brand" href="index.html"> 表情包😘</a>	
+					@else
+					<a class="navbar-brand" href="index.html"> {{$type->type_name}}</a>	
+					@endempty
 				</div>
 			</div>
 		</div>
@@ -74,7 +73,7 @@
         	<div class="item">
         		<div class="animate-box">
         			<!-- <p>{{$status->pic_url}}</p> -->
-	        		<a href="{{$status->pic_url}}" class="image-popup fh5co-board-img"><img src="{{$status->pic_url}}" alt="Free HTML5 Bootstrap template"></a>
+	        		<a href="{{$status->pic_url}}" class="image-popup fh5co-board-img"><img src="{{$status->thumb}}" alt="Free HTML5 Bootstrap template"></a>
         		</div>
         	</div>
         	@endforeach
@@ -103,7 +102,7 @@
 						<a href="#"><i class="icon-dribbble"></i></a>
 						<a href="#"><i class="icon-youtube"></i></a>
 					</p> -->
-					<p><small>&copy; <a style="color:#818892" href='{{ route('home') }}'>首页</a>  | <a style="color:#818892" href='{{ route('home') }}'>字词我们</a> | QQ群</small></p>
+					<p><small>&copy; <a style="color:#818892" href='{{ route('home') }}'>首页</a>  | <a style="color:#818892" href='{{ route('support') }}'>字词我们</a> | <span id='qun'>QQ群</span></small></p>
 				</div>
 			</div>
 		</div>
@@ -124,6 +123,7 @@
 	<script src="/js/picjs/salvattore.min.js"></script>
 	<!-- Main JS -->
 	<script src="/js/picjs/main.js"></script>
+	@include('layouts._info_footer')
 
 	
 
