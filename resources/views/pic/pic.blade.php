@@ -26,7 +26,10 @@
 	<!--[if lt IE 9]>
 	<script src="js/respond.min.js"></script>
 	<![endif]-->
-
+	<style>
+		.item img{min-width:150px;}
+		.item img{ width:100%; height:100%;}
+	</style>
 	</head>
 	<body>
 	<div id="fh5co-offcanvass">
@@ -41,7 +44,7 @@
 			  <li><a href="#">暂时还没有分类</a></li>
 			@endif
 		</ul>
-		<h3 class="fh5co-lead">搜索进入[ 抽象APP ]小程序浏览更佳</h3>
+		<h3 class="fh5co-lead">搜索进入[ 抽象APP ]小程序浏览更佳 *不好意思小程序还没有😥</h3>
 		<p class="fh5co-social-icons">
 			<img src="/img/chp.png" alt="">
 		</p>

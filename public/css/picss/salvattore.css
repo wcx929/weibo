@@ -8,13 +8,21 @@
 .column {
     float: left;
 }
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 0px) {
     .column {
         float: none;
         position: relative;
         clear: both;
     }
 }
+.size-1of6 {
+    width: 16.6%;
+}
+
+.size-1of6 img{
+    min-width: 150px;
+}
+
 .size-1of4 {
     width: 25%;
 }
@@ -25,9 +33,14 @@
     width: 50%;
 }
 
+.size-1of2 img{
+    min-width: 50%;
+}
+
+
 
 #fh5co-board[data-columns]::before {
-    content: '5 .column.size-1of5';
+    content: '2 .column.size-1of2';
 }
 
 /* Configurate salvattore with media queries */
@@ -37,7 +50,7 @@
     }
 }
 
-@media screen and (min-width: 451px) and (max-width: 700px) {
+@media screen and (min-width: 0px) and (max-width: 700px) {
     #fh5co-board[data-columns]::before {
         content: '2 .column.size-1of2';
     }
