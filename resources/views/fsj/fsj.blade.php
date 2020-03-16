@@ -91,13 +91,13 @@
 						<a href="#"><i class="icon-dribbble"></i></a>
 						<a href="#"><i class="icon-youtube"></i></a>
 					</p> -->
-					<p><small>&copy; <a style="color:#818892" href='{{ route('home') }}'>首页</a>  | <a style="color:#818892" href='{{ route('home') }}'>字词我们</a> | QQ群</small></p>
+					<p><small>&copy; <a style="color:#818892" href='{{ route('home') }}'>首页</a>  | <a style="color:#818892" href='{{ route('support') }}'>字词我们</a> | <span id='qun'>QQ群</span></small></p>
 				</div>
 			</div>
 		</div>
 	</footer>
 
-
+	<script src="/js/layer.js"></script>
 	<!-- jQuery -->
 	<script src="/js/picjs/jquery.min.js"></script>
 	<!-- jQuery Easing -->
@@ -131,6 +131,16 @@
 				    ,time: 1 //2秒后自动关闭
 				  });
 			});
+			$("#qun").click(function () {
+				//自定义标题风格
+			  layer.open({
+			    title: [
+			      '打开QQ扫一扫加群',
+			      'background-color: #8B8B7A; color:#fff;'
+			    ]
+			    ,content: "<img src='/img/home_logo/qun.png' >"
+			  });
+			})
 		 })
 	</script>
 	</body>

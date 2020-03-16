@@ -44,15 +44,17 @@ class SentenceController extends AdminController
         $grid->type('类型')->display(function ($value) {
             switch ($value) {
                 case '1':
-                    return '嘴臭';
-                    break;
-                case '2':
                     return '嘴甜';
                     break;
+                case '2':
+                    return '嘴臭';
+                    break;
                 case '3':
+                    return '朋友圈';
+                    break;
+                case '4':
                     return '毒鸡汤';
                     break;
-                
                 default:
                     return '未知';
                     break;

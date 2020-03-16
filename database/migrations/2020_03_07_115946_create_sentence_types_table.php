@@ -16,6 +16,7 @@ class CreateSentenceTypesTable extends Migration
         Schema::create('sentence_types', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('type_name');
+            $table->string('logo');
             $table->timestamps();
         });
     }

@@ -19,7 +19,7 @@ class PicController extends Controller
             $builder->where('type_name',$type);
         }
         
-        $info = $builder->paginate(11);
+        $info = $builder->paginate(30);
     	
     	//$info = DB::table('facepics')->paginate(15);
     	$face_type = Pictype::all();

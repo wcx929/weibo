@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Loveword;
 use App\Models\Sentence;
+use DB;
 /*use App\Models\Status;
 use Auth;*/
 
@@ -35,20 +36,23 @@ class StaticPagesController extends Controller
     {
         return view('static_pages/support');
     }
+    
+    public function cx()
+    {
+        return view('static_pages/cx');
+    }
 
-    public function caiji(){
+    public function caiji(Sentence $sentence){
+        header('content-type:text/html;charset=utf-8');
         $url = "https://pyq.shadiao.app/api.php";
-        $html= file_get_contents($url);
-        $html = $html."\r\n";
-        $writeFilePath = "./wcx.txt";
-        $file_write = file_put_contents($writeFilePath,$html);
-        /*$data=[
-            'content'=>$html,
-            'type'=>3,
-            'created_at'=>date('Y-m-d H:i:s',time()),
-            'updated_at'=>date('Y-m-d H:i:s',time())
-        ];
-        Sentence::insert($data);*/
-        echo$html;
+	    for ($i = 0; $i < 100; $i++) {
+	    	
+	    	$html= file_get_contents($url);
+	    	$data['content']=$html;
+	    	$data['online']=1;
+	    	$data['type']=3;
+            $sentence->create($data);
+	    }
+        echo $html;
     }
 }

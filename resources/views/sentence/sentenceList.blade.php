@@ -45,7 +45,7 @@
 		<ul>
 			@if ($sentence_type->count() > 0)
 			@foreach ($sentence_type as $vo)
-			<li><a href="{{ route('senlist', array('type'=>$vo->id))}}">{{$vo->type_name}}</a></li>
+			<li @if($type_id==$vo->id) class="active" @endif ><a href="{{ route('senlist', array('type'=>$vo->id))}}">{{$vo->type_name}}</a></li>
 			@endforeach
         	@else
 			  <li><a href="#">暂时还没有分类</a></li>

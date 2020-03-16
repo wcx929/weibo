@@ -85,12 +85,13 @@ class SentenceController extends Controller
             $builder->where('type',$type);
             $type_arr = SentenceType::find($type);
         }   
-        $info = $builder->paginate(11);
+        $info = $builder->paginate(20);
     	$sentence_type = SentenceType::all();
     	return view('sentence.sentenceList',  [
             'info' => $info,
             'sentence_type' => $sentence_type,
             'type'=>$type_arr,
+            'type_id'=>$type,
             'filters'  => [
                 'type'  => $type,
             ],

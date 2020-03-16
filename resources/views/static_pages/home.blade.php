@@ -73,7 +73,7 @@
       </p>
     </div>
     <div class="media text-muted pt-3">
-      <img src="/img/home_logo/jt.png" alt="">
+      <img src="/img/home_logo/djt.png" alt="">
       <p class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
         <a href="{{ route('loveword', array('type'=>4))}}">
           <strong class="d-block text-primary">毒鸡汤生成器</strong>
@@ -91,6 +91,15 @@
         </a>
       </p>
       
+    </div>
+    <div class="media text-muted pt-3">
+      <img src="/img/home_logo/cxh.png" alt="">
+      <p class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
+      	<a href="{{ route('cx') }}" target="_blank">
+        <strong class="d-block text-primary">抽象话生成器</strong>
+        <span style="color:#6c757d">🌶是💉🉐🐂🍺</span>
+        </a>
+      </p>
     </div>
     <div class="media text-muted pt-3">
       <img src="/img/home_logo/rjsg.png" alt="">

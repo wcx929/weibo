@@ -16,6 +16,7 @@ Route::get('/help', 'StaticPagesController@help')->name('help');
 Route::get('/about', 'StaticPagesController@about')->name('about');
 Route::get('caiji', 'StaticPagesController@caiji');
 Route::get('support', 'StaticPagesController@support')->name('support');
+Route::get('cx', 'StaticPagesController@cx')->name('cx');
 
 Route::get('signup', 'UsersController@create')->name('signup');
 
