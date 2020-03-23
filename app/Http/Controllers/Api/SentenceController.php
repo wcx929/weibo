@@ -4,6 +4,7 @@ use App\Http\Requests\Api\SentenceRequest;
 use Illuminate\Http\Request;
 use App\Models\Sentence;
 use App\Models\SentenceType;
+use App\Models\Pictype;
 
 class SentenceController extends Controller
 {
@@ -20,5 +21,11 @@ class SentenceController extends Controller
     public function getList(Request $request){
     	$list = Sentence::getList($request);
     	return $this->success($list);
+    }
+
+    //返回图片分类
+    public function getPicType(){
+        $pictype = Pictype::all()->where('online', true);
+        return $this->success($pictype);
     }
 }
