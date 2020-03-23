@@ -8,7 +8,7 @@
 <script src="/js/layer.js"></script>
 <script src="/js/picjs/jquery.min.js"></script>
 <footer class="my-5 pt-5 text-muted text-center text-small">
-    <p class="mb-1">© 2017-2020 nmsl8.club</p>
+    <p class="mb-1"><a href="{{route('home')}}">© 2017-2020 nmsl8.club</a> | <a href="http://www.beian.miit.gov.cn" target="_blank" >浙ICP备19003075号-1</a></p>
     <ul class="list-inline">
       <li class="list-inline-item"><a href="{{route('home')}}">首页</a></li>
       <li class="list-inline-item"><a href="{{route('support')}}">字词我们</a></li>

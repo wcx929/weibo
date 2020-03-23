@@ -107,7 +107,7 @@
 			<div class="row row-padded">
 				<div class="col-md-12 text-center">
 					<p class="fh5co-social-icons" style="color:#818892">
-						&copy;  2017-2020 nmsl8.club | 浙ICP备19003075号-1
+						&copy;  2017-2020 nmsl8.club | <a href="http://www.beian.miit.gov.cn" target="_blank"> 浙ICP备19003075号-1 </a>
 						<!--<a href="#"><i class="icon-dribbble"></i></a>
 						<a href="#"><i class="icon-youtube"></i></a>-->
 					</p>

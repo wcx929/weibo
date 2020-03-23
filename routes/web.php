@@ -56,7 +56,8 @@ Route::delete('/users/followers/{user}', 'FollowersController@destroy')->name('f
 
 //
 Route::get('loveword', 'SentenceController@show')->name('loveword');
-Route::post('getloveword', 'SentenceController@words');
+Route::get('getloveword', 'SentenceController@words');
+Route::get('getlist', 'SentenceController@test');
 Route::get('pic', 'PicController@show')->name('pic');
 Route::get('senlist', 'SentenceController@sentenceList')->name('senlist');
 //浮生记列表

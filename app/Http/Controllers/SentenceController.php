@@ -97,4 +97,19 @@ class SentenceController extends Controller
             ],
         ]);	
     }
+    //举子列表
+    public function test(Request $request)
+    {
+    	// 创建一个查询构造器
+        $builder = Sentence::query()->where('online', true);
+        $type_arr=[];
+        // 是否有提交 type 参数，如果有就赋值给 type 变量
+        if ($type = $request->input('type', '')) {
+            $builder->where('type',$type);
+            $type_arr = SentenceType::find($type);
+        }   
+        $info = $builder->paginate(20);
+    	$sentence_type = SentenceType::all();
+    	return response()->json($info);
+    }
 }

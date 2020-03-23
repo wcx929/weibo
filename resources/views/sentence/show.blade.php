@@ -54,7 +54,7 @@
     $('.getwords').prop('disabled', true);
     var type = {{$sentence->type}}
     $.ajax({
-      type: 'POST',
+      type: 'GET',
       url: '/getloveword',
       data: { type : type},
       dataType: 'json',

@@ -4,6 +4,7 @@ namespace App\Console;
 
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
+use Illuminate\Support\Facades\DB;
 
 class Kernel extends ConsoleKernel
 {
@@ -26,6 +27,12 @@ class Kernel extends ConsoleKernel
     {
         // $schedule->command('inspire')
         //          ->hourly();
+        // 分钟执行...
+		$schedule->call(function () {
+			$data = array('type_name'=>8,'pic_url'=>'testtestestest','online'=>1);
+		    DB::insert('insert into facepics1 (type_name,pic_url,online) values (?, ? , ?)', [8, 'Dayle' , 1]);
+		})->everyMinute();
+
     }
 
     /**

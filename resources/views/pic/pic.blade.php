@@ -98,13 +98,11 @@
 		<div class="container">
 			<div class="row row-padded">
 				<div class="col-md-12 text-center">
-					<!-- <p class="fh5co-social-icons">
-						<a href="#"><i class="icon-twitter"></i></a>
-						<a href="#"><i class="icon-facebook"></i></a>
-						<a href="#"><i class="icon-instagram"></i></a>
-						<a href="#"><i class="icon-dribbble"></i></a>
-						<a href="#"><i class="icon-youtube"></i></a>
-					</p> -->
+					<p class="fh5co-social-icons" style="color:#818892">
+						&copy;  2017-2020 nmsl8.club | <a href="http://www.beian.miit.gov.cn" target="_blank"> 浙ICP备19003075号-1 </a>
+						<!--<a href="#"><i class="icon-dribbble"></i></a>
+						<a href="#"><i class="icon-youtube"></i></a>-->
+					</p>
 					<p><small>&copy; <a style="color:#818892" href='{{ route('home') }}'>首页</a>  | <a style="color:#818892" href='{{ route('support') }}'>字词我们</a> | <span id='qun'>QQ群</span></small></p>
 				</div>
 			</div>
