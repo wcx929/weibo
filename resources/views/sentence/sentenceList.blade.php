@@ -7,7 +7,7 @@
 	<head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>抽象表情包</title>
+	<title>列表</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="description" content="Free HTML5 Template by FREEHTML5.CO" />
 	<meta name="keywords" content="抽象表情包,nmsl表情包,nmsl8.club,嘴臭生成器" />
@@ -21,7 +21,7 @@
 	<!-- Magnific Popup -->
 	<link rel="stylesheet" href="/css/picss/magnific-popup.css">
 	<!-- Salvattore -->
-	<link rel="stylesheet" href="/css/picss/salvattore.css">
+	<link rel="stylesheet" href="/css/picss/salvattore_s.css">
 	<!-- Theme Style -->
 	<link rel="stylesheet" href="/css/picss/style.css">
 	<link rel="stylesheet" href="/css/layer.css">

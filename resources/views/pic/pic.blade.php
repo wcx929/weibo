@@ -29,6 +29,7 @@
 	<style>
 		.item img{min-width:150px;}
 		.item img{ width:100%; height:100%;}
+		.fh5co-awake{overflow:scroll;}
 	</style>
 	</head>
 	<body>
@@ -44,9 +45,9 @@
 			  <li><a href="#">暂时还没有分类</a></li>
 			@endif
 		</ul>
-		<h3 class="fh5co-lead">搜索进入[ 抽象APP ]小程序浏览更佳 *不好意思小程序还没有😥</h3>
+		<h3 class="fh5co-lead">搜索进入[ 抽象APP ]小程序浏览更佳</h3>
 		<p class="fh5co-social-icons">
-			<img src="/img/chp.png" alt="">
+			<img src="/img/home_logo/applogo.png" style="width:80%" alt="">
 		</p>
 	</div>
 	<header id="fh5co-header" role="banner">
