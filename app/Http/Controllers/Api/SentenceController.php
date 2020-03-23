@@ -5,6 +5,7 @@ use Illuminate\Http\Request;
 use App\Models\Sentence;
 use App\Models\SentenceType;
 use App\Models\Pictype;
+use App\Models\Facepic;
 
 class SentenceController extends Controller
 {
@@ -27,5 +28,11 @@ class SentenceController extends Controller
     public function getPicType(){
         $pictype = Pictype::all()->where('online', true);
         return $this->success($pictype);
+    }
+
+    //返回图片列表
+    public function getPicList(Request $request){
+        $piclist = Facepic::getList($request);
+        return $this->success($piclist);
     }
 }
