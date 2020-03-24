@@ -19,12 +19,12 @@ class Facepic extends Model
         // 创建一个查询构造器
         $builder = Facepic::query()->where('online', true);
         $type_arr=[];
-        if ($type = $request->input('type', '')) {
+        if (($type = $request->input('type', '')) && $type>=1) {
             $builder->where('type_name',$type);
             $type_arr = Pictype::find($type);
         }
         
-        $info = $builder->paginate(20);
+        $info = $builder->paginate(60);
     	
     	//$info = DB::table('facepics')->paginate(15);
     	$face_type = Pictype::all();
