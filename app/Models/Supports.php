@@ -6,6 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Supports extends Model
 {
+	protected $fillable = [
+        'name', 'money', 'desc','created_at',
+    ];
 	//获取捐助列表
     public static function getList(){
         // 创建一个查询构造器

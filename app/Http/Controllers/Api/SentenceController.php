@@ -6,6 +6,7 @@ use App\Models\Sentence;
 use App\Models\SentenceType;
 use App\Models\Pictype;
 use App\Models\Facepic;
+use App\Models\Supports;
 
 class SentenceController extends Controller
 {
@@ -34,5 +35,11 @@ class SentenceController extends Controller
     public function getPicList(Request $request){
         $piclist = Facepic::getList($request);
         return $this->success($piclist);
+    }
+
+    //返回捐助列表
+    public function getSupportsList(){
+        $supports = Supports::getList();
+        return $this->success($supports);
     }
 }

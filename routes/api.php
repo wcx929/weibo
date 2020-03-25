@@ -22,6 +22,7 @@ Route::namespace('Api')->prefix('v1')->group(function () {
         Route::get('/sentenceList','SentenceController@getList')->name('sentences.getList');
         Route::get('/pictype','SentenceController@getPicType')->name('sentences.getPicType');
         Route::get('/piclist','SentenceController@getPicList')->name('sentences.getPicList');
+        Route::get('/supportslist','SentenceController@getSupportsList')->name('sentences.getSupportsList');
 });
 
 Route::any('/getloveword', 'SentenceController@getloveword');
