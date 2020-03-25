@@ -46,26 +46,23 @@
     </tr>
   </thead>
   <tbody>
+    @if ($supports->count() > 0)
+    @foreach ($supports as $support)
     <tr>
-      <td>晚风</td>
-      <td>99</td>
-      <td>没什么好说的给兄弟们拜个早年吧</td>
-      <td>2020-01-01</td>
+      <td>{{ $support->name }}</td>
+      <td>{{ $support->money }}</td>
+      <td>{{ $support->desc }}</td>
+      <td>{{ $support->created_at }}</td>
     </tr>
-    <tr>
-      <td>Sachin</td>
-      <td>Mumbai</td>
-      <td>400003</td>
-      <td>560001</td>
-    </tr>
-    <tr>
-      <td>Uma</td>
-      <td>Pune</td>
-      <td>411027</td>
-      <td>560001</td>
-    </tr>
+    @endforeach
+    @else
+        <p>没有数据！</p>
+      @endif
   </tbody>
 </table>
+        <div class="container col-md-12 text-center">
+        {{ $supports->render() }}
+        </div>
 </div>
   </section>
   

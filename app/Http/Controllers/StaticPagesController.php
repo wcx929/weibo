@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Loveword;
+use App\Models\Supports;
 use App\Models\Sentence;
 use DB;
 /*use App\Models\Status;
@@ -31,10 +31,12 @@ class StaticPagesController extends Controller
     {
         return view('static_pages/about');
     }
-    
+
+    //捐助
     public function support()
     {
-        return view('static_pages/support');
+        $supports = Supports::getList();
+        return view('static_pages/support',compact('supports'));
     }
     
     public function cx()
@@ -42,17 +44,4 @@ class StaticPagesController extends Controller
         return view('static_pages/cx');
     }
 
-    public function caiji(Sentence $sentence){
-        header('content-type:text/html;charset=utf-8');
-        $url = "https://pyq.shadiao.app/api.php";
-	    for ($i = 0; $i < 100; $i++) {
-	    	
-	    	$html= file_get_contents($url);
-	    	$data['content']=$html;
-	    	$data['online']=1;
-	    	$data['type']=3;
-            $sentence->create($data);
-	    }
-        echo $html;
-    }
 }
