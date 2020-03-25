@@ -7,6 +7,7 @@ use App\Models\SentenceType;
 use App\Models\Pictype;
 use App\Models\Facepic;
 use App\Models\Supports;
+use App\Models\Fsj;
 
 class SentenceController extends Controller
 {
@@ -41,5 +42,11 @@ class SentenceController extends Controller
     public function getSupportsList(){
         $supports = Supports::getList();
         return $this->success($supports);
+    }
+
+    //返回浮生记列表
+    public function getFsjList(){
+        $fsjs = Fsj::getList();
+        return $this->success($fsjs);
     }
 }
