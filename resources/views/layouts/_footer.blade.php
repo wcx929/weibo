@@ -13,6 +13,7 @@
       <li class="list-inline-item"><a href="{{route('home')}}">首页</a></li>
       <li class="list-inline-item"><a href="{{route('support')}}">字词我们</a></li>
       <li class="list-inline-item qun"><a href="#">QQ群</a></li>
+      <li class="list-inline-item wxapp"><a href="#">小程序</a></li>
     </ul>
 </footer>
 <script>
@@ -24,6 +25,16 @@
 			      'background-color: #8B8B7A; color:#fff;'
 			    ]
 			    ,content: "<img src='/img/home_logo/qun.png' >"
+			  });
+			})
+	$(".wxapp").click(function () {
+				//自定义标题风格
+			  layer.open({
+			    title: [
+			      '打开微信扫一扫/直接搜索「抽象APP」，进入小程序使用更便捷',
+			      'background-color: #8B8B7A; color:#fff;'
+			    ]
+			    ,content: "<img src='/img/home_logo/applogo.png' >"
 			  });
 			})
 </script>

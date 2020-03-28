@@ -110,6 +110,13 @@
         </a>
       </p>
     </div>
+    <div class="media text-muted pt-3 wxapp">
+      <img src="/img/home_logo/applogo.png" style="width: 32px;" alt="抽象APP小程序">
+      <p class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
+        <strong class="d-block text-primary">抽象APP小程序</strong>
+        <span style="color:#6c757d">打开微信扫一扫，进入小程序使用更便捷</span>
+      </p>
+    </div>
     <small class="d-block text-right mt-3">
       <a href="#">🌶🌶🌶</a>
     </small>
