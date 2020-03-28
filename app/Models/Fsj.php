@@ -11,7 +11,7 @@ class Fsj extends Model
     //获取浮生记列表
     public static function getList(){
         // 创建一个查询构造器
-        $info = Fsj::query()->where('online', true)->paginate(20);
+        $info = Fsj::query()->where('online', true)->orderBy("created_at","desc") ->paginate(20);
     	return  $info;
     }
 
