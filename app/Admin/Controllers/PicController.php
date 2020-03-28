@@ -3,6 +3,7 @@
 namespace App\Admin\Controllers;
 
 use App\Models\Facepic;
+use App\Models\Pictype;
 use Encore\Admin\Controllers\AdminController;
 use Encore\Admin\Form;
 use Encore\Admin\Grid;
@@ -27,11 +28,10 @@ class PicController extends AdminController
         $grid = new Grid(new Facepic);
 
         $grid->column('id', __('Id'));
-        $grid->column('type_name', __('Type name'));
-        $grid->column('pic_url', __('Pic url'))->image();
-        $grid->column('online', __('Online'));
-        $grid->column('created_at', __('Created at'));
-        $grid->column('updated_at', __('Updated at'));
+        $grid->column('type_name', '分类名称');
+        $grid->column('pic_url', '图片')->image();
+        $grid->column('online', '是否在线');
+        $grid->column('created_at', '创建时间');
 
         return $grid;
     }
@@ -65,10 +65,54 @@ class PicController extends AdminController
     {
         $form = new Form(new Facepic);
 
-        $form->text('type_name', __('Type name'));
-        $form->text('pic_url', __('Pic url'));
-        $form->number('online', __('Online'));
+        $data = Pictype::query()->pluck('type_name', 'id');
+        $form->select('type_name', '分类')->options($data);
+        // 创建一个选择图片的框
+        $form->image('pic_url', '图片');
+        $states = [
+            'on'  => ['value' => 1, 'text' => '上线', 'color' => 'success'],
+            'off' => ['value' => 0, 'text' => '下线', 'color' => 'danger'],
+        ];
+        $form->switch('online', '是否上线')->states($states);
 
         return $form;
     }
+
+    public function add(Content $content)
+  {
+    //添加请求
+    if (request()->isMethod('post')) {
+  
+      //验证
+      $data = request()->post();
+  
+      $validate = Validator::make($data, [
+        'title' => 'required|max:125',
+        'content' => 'required'
+      ]);
+      //处理
+      if ($validate->fails()) {
+        $content->withWarning('提醒', $validate);
+      } else {
+        Mail::create($data);
+        $content->withSuccess('提醒', '操作成功');
+        return redirect('/admin/mails');
+      }
+    }
+  
+  
+    $content->header('群发邮件');
+  
+    $form = new \Encore\Admin\Widgets\Form();
+    $form->action('send');
+    $form->text('title','标题')->rules('required');
+    $form->textarea('content','内容')->rules('required');
+  
+    $content->body($form);
+    $js = <<<SCRIPT
+     
+SCRIPT;
+    Admin::script($js);
+    return $content;
+  }
 }

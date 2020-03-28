@@ -29,7 +29,7 @@
       <p id="words" class="lead text-muted border-bottom pb-5 pt-4" style="font-size:1.1rem;" >{{$sentence->content}}</p>    
     </div>
     <p>
-    	<a href="{{route('senlist', array('type'=>$sentence->type))}}" class="btn btn-info" role="button">列表查看</a> 
+    	<!-- <a href="{{route('senlist', array('type'=>$sentence->type))}}" class="btn btn-info" role="button">列表查看</a>  -->
         <button type="button" id="copy" data-clipboard-text="{{$sentence->content}}" data-clipboard-target="#words" class="btn btn-success">复制</button>
         <button type="button" class="btn btn-info getwords">换一句</button>    
       </p>
