@@ -66,9 +66,16 @@ class FsjController extends AdminController
     {
         $form = new Form(new Fsj);
 
-        $form->quill('content', '内容')->rules('required');
-        $form->number('copy_num', __('Copy num'));
-        $form->number('online', __('Online'));
+        //$form->quill('content', '内容')->rules('required');
+        $form->textarea('content', '内容')->rows(10)->rules('required');
+        // 创建一个选择图片的框
+        $form->image('image', '图片');
+        $form->number('copy_num', '复制次数')->min(0);
+        $states = [
+            'on'  => ['value' => 1, 'text' => '上线', 'color' => 'success'],
+            'off' => ['value' => 0, 'text' => '下线', 'color' => 'danger'],
+        ];
+        $form->switch('online', '是否上线')->states($states);
 
         return $form;
     }
