@@ -45,8 +45,9 @@ class SentenceController extends Controller
     }
 
     //返回浮生记列表
-    public function getFsjList(){
-        $fsjs = Fsj::getList();
+    public function getFsjList(Request $request){
+        $type= $request->input('type', 1);
+        $fsjs = Fsj::getList($type);
         return $this->success($fsjs);
     }
 }
