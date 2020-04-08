@@ -38,7 +38,7 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-md-12">
-					<a href="#" class="fh5co-menu-btn js-fh5co-menu-btn">菜单 <img src="/img/home_logo/cd.png" alt=""></a>
+					<!--<a href="#" class="fh5co-menu-btn js-fh5co-menu-btn">菜单 <img src="/img/home_logo/cd.png" alt=""></a>-->
 					@empty($type)
 					<a class="navbar-brand" href="index.html"> {{$title}} <p style="font-size:8px;color:grey;">每日更新</p></a>
 					@else

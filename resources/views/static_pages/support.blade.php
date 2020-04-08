@@ -35,6 +35,7 @@
         <button type="button" onclick="zfb()"  class="btn btn-info btn-sm">支付宝支付</button>
         <button type="button" onclick="qq()" style="color:#fff;" class="btn btn-warning btn-sm">QQ支付</button>    
       </p>
+      <p style="color:grey;font-size:14px;">您的捐助将会用在nmsl8.club的网站维护以及服务器的升级和续期。不论多少您的捐助信息都将在此列表展示，如果您不希望进行展示或者漏掉了您的捐助信息，您可以发送邮件到1161993909@qq.com或者进群后联系管理员。最后，感谢感谢感谢您对nmsl8.club的支持</p>
       <div class="table-responsive">
   <table class="table table-striped">
   <thead>
