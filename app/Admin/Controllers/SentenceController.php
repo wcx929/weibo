@@ -120,11 +120,6 @@ class SentenceController extends AdminController
         $form->textarea('content', '内容')->rules('required');
         /*$form->number('copy_num', __('Copy num'));*/
         $form->radio('online', '上架')->options(['1' => '是', '0'=> '否'])->default('0');
-        $directors = [
-            1 => 'John',
-            2 => 'Smith',
-            3 => 'Kate' ,
-        ];
         $data = SentenceType::query()->pluck('type_name', 'id');
         $form->select('type', '分类')->options($data);
         return $form;

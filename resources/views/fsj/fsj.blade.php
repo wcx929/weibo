@@ -7,7 +7,7 @@
 	<head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>浮生记-nmsl8.club</title>
+	<title>{{$title}}-nmsl8.club</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="description" content="Free HTML5 Template by FREEHTML5.CO" />
 	<meta name="keywords" content="抽象表情包,nmsl表情包,nmsl8.club,嘴臭生成器" />
@@ -40,7 +40,7 @@
 				<div class="col-md-12">
 					<a href="#" class="fh5co-menu-btn js-fh5co-menu-btn">菜单 <img src="/img/home_logo/cd.png" alt=""></a>
 					@empty($type)
-					<a class="navbar-brand" href="index.html"> 浮生若梦 <p style="font-size:8px;color:grey;">每日更新</p></a>
+					<a class="navbar-brand" href="index.html"> {{$title}} <p style="font-size:8px;color:grey;">每日更新</p></a>
 					@else
 					<a class="navbar-brand" href="index.html"> {{$type->type_name}}</a>	
 					@endempty	

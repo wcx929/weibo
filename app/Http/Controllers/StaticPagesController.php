@@ -44,4 +44,10 @@ class StaticPagesController extends Controller
         return view('static_pages/cx');
     }
 
+    //留言
+    public function message()
+    {
+        return view('static_pages/message');
+    }
+
 }

@@ -26,7 +26,7 @@ class FsjController extends AdminController
     {
         $grid = new Grid(new Fsj);
         $grid->id('ID');
-        $grid->content('内容')->display(function ($value) {
+        $grid->content('内容')->style('max-width:500px;word-break:break-all;')->display(function ($value) {
             return strip_tags($value);
         });
         $grid->copy_num('复制次数');
@@ -76,6 +76,7 @@ class FsjController extends AdminController
             'off' => ['value' => 0, 'text' => '下线', 'color' => 'danger'],
         ];
         $form->switch('online', '是否上线')->states($states);
+        $form->select('type','分类')->options([1 => '浮生记', 2 => '舔狗日记']);
 
         return $form;
     }

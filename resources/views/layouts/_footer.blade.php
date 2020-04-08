@@ -31,10 +31,10 @@
 				//自定义标题风格
 			  layer.open({
 			    title: [
-			      '打开微信扫一扫/直接搜索「抽象APP」，进入小程序使用更便捷',
+			      '打开微信/QQ扫一扫，进入小程序使用更便捷',
 			      'background-color: #8B8B7A; color:#fff;'
 			    ]
-			    ,content: "<img src='/img/home_logo/applogo.png' >"
+			    ,content: "<p>微信扫一扫</p><img style='width:80%;' src='/img/home_logo/applogo.png' ><p>QQ扫一扫</p><img style='width:80%;' src='/img/home_logo/qqapp.png' >"
 			  });
 			})
 </script>

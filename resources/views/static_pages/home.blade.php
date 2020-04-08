@@ -93,6 +93,17 @@
       
     </div>
     <div class="media text-muted pt-3">
+      <img src="/img/home_logo/tg.png" alt="">
+      
+      <p class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
+        <a href="{{ route('fsj', array('type'=>2))}}" target="_blank" >
+          <strong class="d-block text-primary">舔狗日记</strong>
+          <span style="color:#6c757d">若不是真的喜欢，谁愿意当一个舔狗呢？</span>
+        </a>
+      </p>
+      
+    </div>
+    <div class="media text-muted pt-3">
       <img src="/img/home_logo/cxh.png" alt="">
       <p class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
       	<a href="{{ route('cx') }}" target="_blank">
