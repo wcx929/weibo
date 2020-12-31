@@ -31,7 +31,7 @@ class SentenceController extends Controller
             case '4':
                 $sentence['bg']='bg-djt';
                 break;
-            
+
             default:
                 $sentence['bg']='bg-info';
                 break;
@@ -39,16 +39,23 @@ class SentenceController extends Controller
         if(empty($sentence)){
              throw new InvalidRequestException("出错了");
         }
+        if ($type == 2) {
+            $sentence->content = '嘴臭生成器暂时不字词使用(有内鬼';
+        }
         return view('sentence.show', compact('sentence'));
     }
 
     //接口随机返回一条数据
     public function words(Request $request)
     {
-    	$sentence = Sentence::getOne($request->input('type', ''));
+        $type = $request->input('type', '1');
+    	$sentence = Sentence::getOne($type);
+    	if ($type == 2) {
+    	    $sentence->content = '嘴臭生成器暂时不字词使用(有内鬼';
+        }
         return response()->json($sentence);
     }
-    
+
     //举子列表
     public function sentenceList(Request $request)
     {
@@ -65,7 +72,7 @@ class SentenceController extends Controller
         if ($type = $request->input('type', '')) {
             $builder->where('type',$type);
             $type_arr = SentenceType::find($type);
-        }   
+        }
         $info = $builder->paginate(20);
     	$sentence_type = SentenceType::all();
     	return response()->json($info);
