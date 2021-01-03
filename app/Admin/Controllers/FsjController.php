@@ -15,7 +15,7 @@ class FsjController extends AdminController
      *
      * @var string
      */
-    protected $title = 'App\Models\Fsj';
+    protected $title = '浮生记';
 
     /**
      * Make a grid builder.
