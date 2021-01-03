@@ -27,11 +27,12 @@ class Kernel extends ConsoleKernel
     {
         // $schedule->command('inspire')
         //          ->hourly();
-        // 分钟执行...
+        // 分钟执行...  更新一条舔狗日记
 		$schedule->call(function () {
-			$data = array('type_name'=>8,'pic_url'=>'testtestestest','online'=>1);
-		    DB::insert('insert into facepics1 (type_name,pic_url,online) values (?, ? , ?)', [8, 'Dayle' , 1]);
-		})->everyMinute();
+			$date = date('Y-m-d H:i:s');
+			$query = "update fsj set online = 1,created_at = '" . $date . "' where online = 0 limit 1";
+            DB::update($query);
+		})->cron('0 */3 * * *');;
 
     }
 

@@ -8,6 +8,9 @@ use Illuminate\Support\Str;
 class Fsj extends Model
 {
     protected $table = 'fsj';
+    protected $fillable = [
+        'content', 'type', 'online','image'
+    ];
     //获取浮生记列表
     public static function getList($type=1){
         // 创建一个查询构造器

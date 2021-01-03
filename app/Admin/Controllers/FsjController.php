@@ -32,7 +32,7 @@ class FsjController extends AdminController
         $grid->copy_num('复制次数');
         $grid->column('online', __('Online'));
         /*$grid->column('created_at', __('Created at'));*/
-        $grid->updated_at('创建时间');
+        $grid->updated_at('创建时间')->sortable();
 
         return $grid;
     }

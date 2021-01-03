@@ -65,3 +65,6 @@ Route::get('fsj', 'FsjController@show')->name('fsj');
 
 //测试excel
 Route::get('excel/export','ExcelController@export');
+
+//抓取舔狗日记
+Route::get('crawl/dogs','CrawlController@getDogs');
