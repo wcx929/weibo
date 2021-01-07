@@ -8,7 +8,7 @@
 	<meta name="keywords" content="抽象表情包抽象TVapp">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <!-- Bootstrap core CSS -->
-	<link href="/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	<link href="/css/bootstrap.min.css" rel="stylesheet" >
     <!-- Favicons -->
 	<link rel="icon" href="/img/cx.ico">
 	<meta name="theme-color" content="#563d7c">
@@ -24,35 +24,35 @@
     <!--<img class="mr-3" src="./Offcanvas template · Bootstrap_files/bootstrap-outline.svg" alt="" width="48" height="48">-->
     <div class="lh-100">
       <!--<h6 class="mb-0 text-white lh-100">每日一句</h6>-->
-      <small>且随疾风前行，身后亦需留心</small>
+      <small>{{$oneWords}}</small>
     </div>
   </div>
 
   <div class="my-3 p-3 bg-white rounded shadow-sm">
-  	
+
     <!--<h6 class="border-bottom border-gray pb-2 mb-0">抽象表情包</h6>-->
-    
+
     <div class="media text-muted pt-3" >
       <img src="/img/home_logo/bqb.png" alt="">
-      
+
       <p class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
       	<a href="{{ route('pic') }}" target="_blank" >
           <strong class="d-block text-primary">抽象表情包</strong>
           <span style="color:#6c757d">🏄‍人用的表情包</span>
         </a>
       </p>
-      
+
     </div>
     <div class="media text-muted pt-3">
       <img src="/img/home_logo/nmsl.png" alt="">
-      
+
       <p class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
       	<a href="{{ route('loveword', array('type'=>2))}}" target="_blank" >
           <strong class="d-block text-primary">嘴臭生成器</strong>
           <span style="color:#6c757d">最简单的嘴臭，最极致的享受</span>
         </a>
       </p>
-      
+
     </div>
     <div class="media text-muted pt-3">
       <img src="/img/home_logo/zt.png" alt="">
@@ -83,25 +83,25 @@
     </div>
     <div class="media text-muted pt-3">
       <img src="/img/home_logo/fsj.png" alt="">
-      
+
       <p class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
       	<a href="{{ route('fsj') }}" target="_blank" >
           <strong class="d-block text-primary">浮生记</strong>
           <span style="color:#6c757d">你在山上，看着我死.</span>
         </a>
       </p>
-      
+
     </div>
     <div class="media text-muted pt-3">
       <img src="/img/home_logo/tg.png" alt="">
-      
+
       <p class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
         <a href="{{ route('fsj', array('type'=>2))}}" target="_blank" >
           <strong class="d-block text-primary">舔狗日记</strong>
           <span style="color:#6c757d">若不是真的喜欢，谁愿意当一个舔狗呢？</span>
         </a>
       </p>
-      
+
     </div>
     <div class="media text-muted pt-3">
       <img src="/img/home_logo/cxh.png" alt="">

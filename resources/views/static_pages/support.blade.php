@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <!-- saved from url=(0044)https://v4.bootcss.com/docs/examples/album/# -->
 <html lang="zh"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    
+
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="_token" content="{{ csrf_token() }}"/>
     <meta name="author" content="wanfeng">
     <title>字词我们</title>
     <link rel="icon" href="/img/cx.ico">
-    <link href="/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
     <link href="/css/album.css" rel="stylesheet">
   </head>
   <body>
@@ -33,7 +33,7 @@
     <p>
     	<button type="button" onclick="wx()"  class="btn btn-success btn-sm">微信支付</button>
         <button type="button" onclick="zfb()"  class="btn btn-info btn-sm">支付宝支付</button>
-        <button type="button" onclick="qq()" style="color:#fff;" class="btn btn-warning btn-sm">QQ支付</button>    
+        <button type="button" onclick="qq()" style="color:#fff;" class="btn btn-warning btn-sm">QQ支付</button>
       </p>
       <p style="color:grey;font-size:14px;">您的捐助将会用在nmsl8.club的网站维护以及服务器的升级和续期。不论多少您的捐助信息都将在此列表展示，如果您不希望进行展示或者漏掉了您的捐助信息，您可以发送邮件到1161993909@qq.com或者进群后联系管理员。最后，感谢感谢感谢您对nmsl8.club的支持</p>
       <div class="table-responsive">
@@ -66,12 +66,11 @@
         </div>
 </div>
   </section>
-  
+
 </main>
 
 @include('layouts._footer')
  <script src="{{ mix('js/app.js') }}"></script>
- <script src="/js/clipboard.min.js"></script>
  <script>
   function zfb(){
       $("#zfb").show();

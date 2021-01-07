@@ -2,24 +2,17 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\Service\CrawlService;
 use App\Models\Supports;
-use App\Models\Sentence;
 use DB;
-/*use App\Models\Status;
-use Auth;*/
 
 class StaticPagesController extends Controller
 {
      public function home()
     {
+        $oneWords = CrawlService::getOneWords();
 
-        return view('static_pages/home');
-        /*$feed_items = [];
-        if (Auth::check()) {
-            $feed_items = Auth::user()->feed()->paginate(30);
-        }
-        return view('static_pages/home',compact('feed_items'));*/
+        return view('static_pages/home', compact('oneWords'));
     }
 
     public function help()
@@ -38,7 +31,7 @@ class StaticPagesController extends Controller
         $supports = Supports::getList();
         return view('static_pages/support',compact('supports'));
     }
-    
+
     public function cx()
     {
         return view('static_pages/cx');
