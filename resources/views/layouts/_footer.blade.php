@@ -1,6 +1,6 @@
 <style>
 	a{
-		color:grey;	
+		color:grey;
 		font-size:0.6rem;
 	}
 </style>
@@ -34,7 +34,8 @@
 			      '打开微信/QQ扫一扫，进入小程序使用更便捷',
 			      'background-color: #8B8B7A; color:#fff;'
 			    ]
-			    ,content: "<p>微信扫一扫</p><img style='width:80%;' src='/img/home_logo/applogo.png' ><p>QQ扫一扫</p><img style='width:80%;' src='/img/home_logo/qqapp.png' >"
+			    ,content: "<div><img style='width:50%;float: left' src='/img/home_logo/applogo.png' >" +
+            "<img style='width:50%;' src='/img/home_logo/qqapp.png' ></div>"
 			  });
 			})
 </script>
