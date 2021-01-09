@@ -25,10 +25,11 @@ Route::namespace('Api')->prefix('v1')->group(function () {
         Route::get('/supportslist','SentenceController@getSupportsList')->name('sentences.getSupportsList');
         Route::get('/fsjlist','SentenceController@getFsjList')->name('sentences.getFsjList');
         Route::get('/wallList','WallController@getWallList')->name('wall.getWallList');
+        /*小程序*/
+        Route::get('/wxappLogin','LoginController@login')->name('wxappLogin.login');
+        Route::get('/wxappGetUserInfo','LoginController@getUserInfo')->name('wxapp.wxappGetUserInfo');
 });
 
-/*小程序*/
-Route::get('wxappLogin','api\LoginController@login')->name('wxappLogin.login');
-Route::get('wxappGetUserInfo','api\LoginController@getUserInfo')->name('wxapp.wxappGetUserInfo');
+
 
 Route::any('/getloveword', 'SentenceController@getloveword');
