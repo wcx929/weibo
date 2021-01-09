@@ -40,13 +40,14 @@ class LoginController extends Controller
         $iv            = $request->get('iv');
         $encryptedData = $request->get('encryptedData');
         $userInfo      = $this->app->encryptor->decryptData($sessionKey, $iv, $encryptedData);
-        wxAppUser::firstOrCreate(['wxapp_openid' => $userInfo['openId']],
+        $res = wxAppUser::firstOrCreate(['wxapp_openid' => $userInfo['openId']],
             [
                 'wxapp_openid' => $userInfo['openId'],
                 'wxapp_name'   => $userInfo['nickName'],
                 'wxapp_avatar' => $userInfo['avatarUrl'],
 
             ]);
+        $userInfo['uid'] = $res->id;
         return $this->success($userInfo);
         //return $this->app->encryptor->decryptData($sessionKey, $iv, $encryptedData);
     }
