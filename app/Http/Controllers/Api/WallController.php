@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Api;
 
 use App\Models\Wall;
 use Illuminate\Http\Request;
+use App\Service\wxAppletService;
 
 class WallController extends Controller
 {
@@ -17,6 +18,10 @@ class WallController extends Controller
     {
         $uid = $request->post('uid', 1);
         $content = $request->post('content', 1);
+        $res = wxAppletService::contentSecurity($content);
+        if ($res['errcode'] == 87014) {
+            return $this->error('内容违规');
+        }
         $wall = new Wall;
 
         $wall->content = $content;
@@ -27,4 +32,5 @@ class WallController extends Controller
 
         return $this->success('操作成功');
     }
+
 }

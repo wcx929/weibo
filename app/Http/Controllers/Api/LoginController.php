@@ -34,6 +34,14 @@ class LoginController extends Controller
         return $this->success($data);
     }
 
+    /**
+     * 解密用户信息，存入数据库
+     * @param Request $request
+     * @param wxAppUser $wxAppUser
+     * @return mixed
+     * Author:wcx
+     * DateTime:2021/1/9 17:50
+     */
     public function getUserInfo(Request $request, wxAppUser $wxAppUser)
     {
         $sessionKey    = $request->get('sessionKey');
