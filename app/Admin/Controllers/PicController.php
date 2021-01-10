@@ -82,10 +82,10 @@ class PicController extends AdminController
   {
     //添加请求
     if (request()->isMethod('post')) {
-  
+
       //验证
       $data = request()->post();
-  
+
       $validate = Validator::make($data, [
         'title' => 'required|max:125',
         'content' => 'required'
@@ -99,18 +99,18 @@ class PicController extends AdminController
         return redirect('/admin/mails');
       }
     }
-  
-  
+
+
     $content->header('群发邮件');
-  
+
     $form = new \Encore\Admin\Widgets\Form();
     $form->action('send');
     $form->text('title','标题')->rules('required');
     $form->textarea('content','内容')->rules('required');
-  
+
     $content->body($form);
     $js = <<<SCRIPT
-     
+
 SCRIPT;
     Admin::script($js);
     return $content;

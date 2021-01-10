@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Http\Request;
+use Intervention\Image\Facades\Image;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,6 +27,8 @@ Route::namespace('Api')->prefix('v1')->group(function () {
         Route::get('/fsjlist','SentenceController@getFsjList')->name('sentences.getFsjList');
         Route::get('/wallList','WallController@getWallList')->name('wall.getWallList');
         Route::post('/wallAdd','WallController@wallAdd')->name('wall.wallAdd');
+        Route::post('/uploadOss','UploadOssController@uploadOss')->name('uploadOss.uploadOss');
+        Route::get('/zipImg','UploadOssController@zipImg')->name('uploadOss.zipImg');
         /*小程序*/
         Route::get('/wxappLogin','LoginController@login')->name('wxappLogin.login');
         Route::get('/wxappGetUserInfo','LoginController@getUserInfo')->name('wxapp.wxappGetUserInfo');

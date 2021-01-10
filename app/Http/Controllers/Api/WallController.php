@@ -17,10 +17,10 @@ class WallController extends Controller
     public function wallAdd(Request $request)
     {
         $uid = $request->post('uid', 1);
-        $content = $request->post('content', 1);
+        $content = $request->post('content');
         $res = wxAppletService::contentSecurity($content);
         if ($res['errcode'] == 87014) {
-            return $this->error('内容违规');
+            return $this->internalError('内容违规');
         }
         $wall = new Wall;
 
