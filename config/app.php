@@ -179,6 +179,7 @@ return [
         App\Providers\RouteServiceProvider::class,
         Jacobcyl\AliOSS\AliOssServiceProvider::class,
         Intervention\Image\ImageServiceProvider::class,
+        Overtrue\LaravelPinyin\ServiceProvider::class,
 
     ],
 
@@ -232,6 +233,7 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
         'Image' => Intervention\Image\Facades\Image::class,
+        'Pinyin' => Overtrue\LaravelPinyin\Facades\Pinyin::class,
 
     ],
 

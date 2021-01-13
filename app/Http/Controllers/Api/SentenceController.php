@@ -20,7 +20,7 @@ class SentenceController extends Controller
     		return $this->failed('数据错误！');
     	}
     }
-    
+
     public function getList(Request $request){
     	$list = Sentence::getList($request);
     	return $this->success($list);
@@ -49,5 +49,12 @@ class SentenceController extends Controller
         $type= $request->input('type', 1);
         $fsjs = Fsj::getList($type);
         return $this->success($fsjs);
+    }
+
+    public function pinyin(Request $request)
+    {
+        $content = $request->input('content');
+        $pinyin = app('pinyin');
+        return $this->success($pinyin->sentence($content, PINYIN_TONE));
     }
 }

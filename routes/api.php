@@ -32,8 +32,14 @@ Route::namespace('Api')->prefix('v1')->group(function () {
         /*小程序*/
         Route::get('/wxappLogin','LoginController@login')->name('wxappLogin.login');
         Route::get('/wxappGetUserInfo','LoginController@getUserInfo')->name('wxapp.wxappGetUserInfo');
+        //拼音
+        Route::get('/pinyin','SentenceController@pinyin')->name('sentences.pinyin');
 });
 
 
 
 Route::any('/getloveword', 'SentenceController@getloveword');
+
+// 小程序登录
+Route::post('weapp/authorizations', 'AuthorizationsController@weappStore')
+    ->name('weapp.authorizations.store');
